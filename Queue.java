@@ -23,7 +23,7 @@ public class Queue {
         Path source = Paths.get("unprocessed/" + filename);
         Path target = Paths.get("queue/" + queueNum + "/" + filename);
         Files.move(source, target);
-        System.out.println(filename + " has been moved to queue #" + queueNum);
+        System.out.println(filename + " has been routed to queue #" + queueNum);
     }
 
     private static void processExisting() throws Exception {

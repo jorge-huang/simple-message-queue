@@ -18,7 +18,6 @@ public class Consumer {
 
     private static void processQueue(String filename) throws Exception {
         Path source = Paths.get(pathStr + "/" + filename);
-        Path target = Paths.get("processed/" + filename);
         Files.lines(source).map(data -> {
             String[] list = data.split(",");
             Map<String, String> hashMap = new HashMap<>();
@@ -28,7 +27,7 @@ public class Consumer {
             hashMap.put("color", list[2]);
             return hashMap;
         }).forEach(System.out::println);
-        Files.move(source, target);
+        Files.delete(source);
     }
 
     private static void createDirs() throws IOException {
