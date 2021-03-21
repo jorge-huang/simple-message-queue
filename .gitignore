@@ -1,0 +1,4 @@
+*.class
+processed
+queue
+unprocessed
